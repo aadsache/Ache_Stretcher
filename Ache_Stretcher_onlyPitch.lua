@@ -1,3 +1,5 @@
+
+
 function match_name(path)
 
     fn_flag = string.find(path, "\\")
@@ -53,7 +55,7 @@ end
 
 function detect(path,length)
 
-    while(true) do
+   
 
         local file,err=io.open(path)
 
@@ -67,17 +69,17 @@ function detect(path,length)
             reaper.SetMediaItemTake_Source( take, source )
             reaper.UpdateArrange()
             reaper.Main_OnCommand(40441, 0)
-            break 
+            
         end
 
-    end
+   
 
 end
 
 
 function main()
     local tempPath=reaper.GetProjectPath(0).."\\".."Ache_Strecher.temp"
-    local exePath=reaper.GetResourcePath().."\\".."Scripts".."\\".."ache".."\\".."Ache_Stretcher.exe"
+    local exePath=reaper.GetResourcePath().."\\".."Scripts".."\\".."Ache_Scripts".."\\".."Utility".."\\".."Ache_Stretcher.exe"
     local arg,desPath,length=getArg()
     if arg~=nil then 
         reaper.BR_Win32_WritePrivateProfileString(" ", " ",arg,tempPath)
